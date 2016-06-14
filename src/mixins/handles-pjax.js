@@ -1,16 +1,14 @@
-import PjaxContainer from '../components/pjax-container';
-import PjaxForm from '../directives/pjax-form';
-import PjaxLink from '../directives/pjax-link';
+import Pjax from '../components/pjax';
+import PjaxDirective from '../directives/pjax';
 
 export default {
 
     components: {
-        PjaxContainer,
+        pjax: PjaxComponent,
     },
 
     directives: {
-        PjaxForm,
-        PjaxLink,
+        pjax: PjaxDirective,
     },
 
     events: {

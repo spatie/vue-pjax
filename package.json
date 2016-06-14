@@ -1,6 +1,6 @@
 {
   "name": "vue-pjax",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": ":package_description",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
@@ -22,8 +22,13 @@
     "url": "https://github.com/spatie/vue-pjax/issues"
   },
   "homepage": "https://github.com/spatie/vue-pjax",
+  "peerDependencies": {
+    "vue": "^1.0.24",
+    "vue-resource": "^0.7.4"
+  },
   "devDependencies": {
     "babel-cli": "^6.9.0",
+    "babel-eslint": "^6.0.4",
     "babel-preset-es2015": "^6.9.0",
     "eslint": "^2.9.0"
   },

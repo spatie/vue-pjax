@@ -3,6 +3,8 @@
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-pjax.svg?style=flat-square)](https://npmjs.com/package/vue-pjax)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
+**Work in progress**
+
 Vue components and directives to progressively enhance your page with PJAX.
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
