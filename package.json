@@ -22,6 +22,9 @@
     "url": "https://github.com/spatie/vue-pjax/issues"
   },
   "homepage": "https://github.com/spatie/vue-pjax",
+  "dependencies": {
+    "lodash.merge": "^4.4.0"
+  },
   "peerDependencies": {
     "vue": "^1.0.24",
     "vue-resource": "^0.7.4"
