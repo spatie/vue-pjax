@@ -5,53 +5,47 @@ export default {
 
     bind() {
 
+        const container = this.arg;
+        const options = {};
+        let eventName;
+
         switch (this.el.tagName.toLowerCase()) {
 
             case 'a':
-                this.on('click', handleLinkClick.bind(this));
+                eventName = 'click';
+                options.url = this.el.getAttribute('href');
                 break;
 
             case 'form':
-                this.on('submit', handleFormSubmit.bind(this));
+                eventName = 'submit';
+                options.url = this.el.getAttribute('action');
+                options.method = this.el.getAttribute('method') || 'POST';
+                options.data = serialize(this.el);
                 break;
 
+            default:
+                return;
+
         }
+
+        this.on(eventName, event => {
+
+            event.preventDefault();
+
+            request(container, options)
+                .then(response => {
+                    this.vm.$broadcast('pjax-loaded', {
+                        container,
+                        content: response.data,
+                        url: options.url,
+                    });
+                }, () => {
+                    window.location = url;
+                });
+
+        })
+
+
     },
 
 };
-
-function handleFormSubmit(event) {
-    event.preventDefault();
-
-    const container = this.arg;
-    const url = this.el.getAttribute('action');
-    const method = this.el.getAttribute('method') || 'POST';
-    const data = serialize(this.el);
-
-    request(container, { url, method, data })
-        .then(response => {
-            this.vm.$broadcast('pjax-loaded', {
-                container,
-                content: response.data,
-            });
-        }, () => {
-            window.location = url;
-        });
-}
-
-function handleLinkClick(event) {
-    event.preventDefault();
-
-    const container = this.arg;
-    const url = this.el.getAttribute('href');
-
-    request(container, { url, method: 'GET' })
-        .then(response => {
-            this.vm.$broadcast('pjax-loaded', {
-                container,
-                content: response.data,
-            });
-        }, () => {
-            window.location = url;
-        });
-}

@@ -12,7 +12,7 @@ export default {
     },
 
     events: {
-        ['pjax-insert']({ element, content }) {
+        ['pjax-replace']({ element, content }) {
             element.innerHTML = content;
             this.$compile(element);
         },

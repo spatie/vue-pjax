@@ -9,18 +9,20 @@ Vue components and directives to progressively enhance your site with PJAX.
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-## Install
-
-You can install the package via npm:
-
-```bash
-$ npm install vue-pjax
-```
+## Requirements
 
 This package requires your application to provide two dependencies: `vue` and `vue-resource`.
 
 ```bash
 $ npm install vue vue-resource
+```
+
+## Installation
+
+You can install the package via npm:
+
+```bash
+$ npm install vue-pjax
 ```
 
 ## Usage

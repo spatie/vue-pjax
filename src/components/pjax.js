@@ -11,15 +11,16 @@ export default {
     `,
 
     events: {
-        ['pjax-loaded']({ container, content }) {
+        ['pjax-loaded']({ url, container, content }) {
 
             if (this.name !== container) {
                 return;
             }
 
-            this.$dispatch('pjax-insert', {
-                element: this.$els.container,
+            this.$dispatch('pjax-replace', {
+                url,
                 content,
+                element: this.$els.container,
             });
         },
     },
