@@ -1,4 +1,4 @@
-import Pjax from '../components/pjax';
+import PjaxComponent from '../components/pjax';
 import PjaxDirective from '../directives/pjax';
 
 export default {

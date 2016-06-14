@@ -4,14 +4,15 @@ import serialize from 'form-serialize';
 export default {
 
     bind() {
-        switch (this.tagName) {
+
+        switch (this.el.tagName.toLowerCase()) {
 
             case 'a':
-                this.on('click', handleLinkClick);
+                this.on('click', handleLinkClick.bind(this));
                 break;
 
             case 'form':
-                this.on('submit', handleFormSubmit);
+                this.on('submit', handleFormSubmit.bind(this));
                 break;
 
         }
@@ -27,7 +28,7 @@ function handleFormSubmit(event) {
     const method = this.el.getAttribute('method') || 'POST';
     const data = serialize(this.el);
 
-    pjax(container, { url, method, data })
+    request(container, { url, method, data })
         .then(response => {
             this.vm.$broadcast('pjax-loaded', {
                 container,
@@ -44,7 +45,7 @@ function handleLinkClick(event) {
     const container = this.arg;
     const url = this.el.getAttribute('href');
 
-    pjax(container, { url, method: 'GET' })
+    request(container, { url, method: 'GET' })
         .then(response => {
             this.vm.$broadcast('pjax-loaded', {
                 container,

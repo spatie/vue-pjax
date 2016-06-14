@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { merge } from 'lodash.merge';
+import merge from 'lodash.merge';
 
 export const request = (container, options) => {
 
@@ -10,7 +10,7 @@ export const request = (container, options) => {
                 'Accept': 'text/html',
                 'X-Requested-With': 'PJAX',
                 'X-PJAX': true,
-                'X-PJAX-Container': `pjax-container[name="${container}"]`,
+                'X-PJAX-Container': `pjax[name="${container}"]`,
             },
         },
         options
