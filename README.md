@@ -15,9 +15,53 @@ You can install the package via npm:
 $ npm install vue-pjax
 ```
 
+This package requires your application to provide two dependencies: `vue` and `vue-resource`.
+
+```bash
+$ npm install vue vue-resource
+```
+
 ## Usage
 
-**Work in progress**
+```js
+import Vue from 'vue';
+import VueResource from 'vue-resource';
+import pjax from 'vue-pjax';
+
+Vue.use(VueResource);
+
+new Vue({
+    el: 'body',
+    mixins: [pjax],
+});
+```
+
+Links:
+
+```html
+<pjax name="my-dynamic-section">
+    No one
+</pjax>
+```
+
+```html
+<a href="/hodor" v-pjax:my-dynamic-section>
+    Replace 'No one' with Hodor's contents
+</a>
+<a href="/bran" v-pjax:my-dynamic-section>
+    Replace 'No one' with Bran's contents
+</a>
+```
+
+Forms:
+
+```html
+<pjax name="my-dynamic-form">
+    <form action="/submit" v-pjax:my-dynamic-form>
+        <!-- Form submissions will replace `my-dynamic-form` with the server's response -->
+    </form>
+</pjax>
+```
 
 ## Change log
 
