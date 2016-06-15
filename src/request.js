@@ -10,7 +10,7 @@ export const request = (container, options) => {
                 'Accept': 'text/html',
                 'X-Requested-With': 'PJAX',
                 'X-PJAX': true,
-                'X-PJAX-Container': `pjax[name="${container}"]`,
+                'X-PJAX-Container': `pjax-container[name="${container}"]`,
             },
         },
         options
