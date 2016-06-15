@@ -1,6 +1,6 @@
 {
   "name": "vue-pjax",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue components and directives to progressively enhance your site with PJAX",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/spatie/vue-pjax",
   "dependencies": {
+    "form-serialize": "^0.7.1",
     "lodash.merge": "^4.4.0"
   },
   "peerDependencies": {
