@@ -3,7 +3,7 @@ import merge from 'lodash.merge';
 
 export const request = (container, options) => {
 
-    return Vue.http(merge({},
+    return Vue.http(merge(
         {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
