@@ -3,19 +3,35 @@
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-pjax.svg?style=flat-square)](https://npmjs.com/package/vue-pjax)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-**Work in progress**
+**WORK IN PROGRESS**
 
-Vue components and directives to progressively enhance your site with PJAX.
+This package provides a Vue component and directive to progressively enhance your site with pjax.
+
+```html
+<!--
+    Clicking one of the links will replace `pjax-container`'s contents since
+    it's name is linked to the `v-pjax` directive.
+-->
+
+<ul>
+    <li><a href="/foo" v-pjax:content>Foo</a></li>
+    <li><a href="/bar" v-pjax:content>Bar</a></li>
+</ul>
+
+<pjax-container name="content">
+    Hello world!
+</pjax-container>
+
+<!-- `v-pjax` can also be bound to form submits. -->
+
+<pjax-container name="my-form">
+    <form method="post" v-pjax:my-form>
+        <!-- ... -->
+    </form>
+</pjax-container>
+```
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
-
-## Requirements
-
-This package requires your application to provide two dependencies: `vue` and `vue-resource`.
-
-```bash
-$ npm install vue vue-resource
-```
 
 ## Installation
 
@@ -25,7 +41,15 @@ You can install the package via npm:
 $ npm install vue-pjax
 ```
 
+This package requires your application to provide two peerDependencies: `vue` and `vue-resource`.
+
+```bash
+$ npm install vue@'^1.0.24' vue-resource@'^0.7.4'
+```
+
 ## Usage
+
+To enable the pjax component and directive, the easiest way is to register the mixin in your root component:
 
 ```js
 import Vue from 'vue';
@@ -40,12 +64,25 @@ new Vue({
 });
 ```
 
-Links:
+If you prefer global components, you'll have to register them separately:
+
+```js
+import { PjaxContainer, pjax } from 'vue-pjax';
+import Vue from 'vue';
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource);
+
+Vue.component('pjax-container', PjaxContainer);
+Vue.directive('pjax', pjax);
+```
+
+
 
 ```html
-<pjax name="my-dynamic-section">
+<pjax-container name="my-dynamic-section">
     No one
-</pjax>
+</pjax-container>
 ```
 
 ```html
@@ -67,15 +104,15 @@ Forms:
 </pjax>
 ```
 
+## Why Vue?
+
+- Events
+- Resource
+- Recompilation
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Testing
-
-``` bash
-$ npm run test
-```
 
 ## Contributing
 
@@ -83,7 +120,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please contact [Sebastian De Deyne](https://github.com/sebastiandedeyne) instead of using the issue tracker.
+If you discover any security related issues, please contact [Freek Van der Herten](https://github.com/freekmurze) instead of using the issue tracker.
 
 ## Credits
 
