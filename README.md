@@ -3,7 +3,7 @@
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-pjax.svg?style=flat-square)](https://npmjs.com/package/vue-pjax)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-**WORK IN PROGRESS**
+**THIS IS AN EXPERIMENT THAT MIGHT NEVER GET A STABLE RELEASE**
 
 This package provides a Vue component and directive to progressively enhance your site with pjax.
 
