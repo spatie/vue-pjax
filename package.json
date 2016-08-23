@@ -1,6 +1,6 @@
 {
   "name": "vue-pjax",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Vue components and directives to progressively enhance your site with PJAX",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
