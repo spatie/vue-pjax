@@ -27,8 +27,8 @@
     "lodash.merge": "^4.4.0"
   },
   "peerDependencies": {
-    "vue": "^1.0.24",
-    "vue-resource": "^0.7.4"
+    "vue": "^1.0.26",
+    "vue-resource": "^0.9.3"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
