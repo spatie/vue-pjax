@@ -49,6 +49,12 @@ You can install the package via npm:
 $ npm install vue-pjax
 ```
 
+or yarn:
+
+```bash
+$ yarn add vue-pjax
+```
+
 This package requires your application to provide two peerDependencies: `vue` and `vue-resource`.
 
 ```bash
